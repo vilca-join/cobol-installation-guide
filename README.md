@@ -22,6 +22,9 @@ Es la versión más reciente de un compilador de código abierto y libre del len
   - Primero nos ubicamose en la carpeta `bin` copiamos la direccion sera algo asi `C:\gnucobol\bin`.
   - Luego editaremos nuestras variables de entorno, buscamos `Editar variables de entorno` en la barra de busqueda de Windows -> hacemos click en `Variables de entorno` ->  nos posicionamos en `Variables del sistema` -> Buscamos `Path` y le damos en editar -> ponesmos `Nuevo` -> Copiamos y pegamos `C:\gnucobol\bin` -> Finalizamos dando en guardar o aceptar en todas las ventanas.
 
-## 2.4 .
+## 2.4 Validacion de la instalacion.
 - Una vez hecho esto abrimos nuestro `cmd` y ejecutamos lo siguiente `cobc --version`.
-- Nos deberia aparecer un mensaje con la version de GnuCobol 3.2. 
+- Nos deberia aparecer un mensaje con la version de GnuCobol 3.2.
+
+# 3. Mi primer codigo.
+## 3.1 Escribiremos un 
