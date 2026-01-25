@@ -23,8 +23,29 @@ Es la versión más reciente de un compilador de código abierto y libre del len
   - Luego editaremos nuestras variables de entorno, buscamos `Editar variables de entorno` en la barra de busqueda de Windows -> hacemos click en `Variables de entorno` ->  nos posicionamos en `Variables del sistema` -> Buscamos `Path` y le damos en editar -> ponesmos `Nuevo` -> Copiamos y pegamos `C:\gnucobol\bin` -> Finalizamos dando en guardar o aceptar en todas las ventanas.
 
 ## 2.4 Validacion de la instalacion.
-- Una vez hecho esto abrimos nuestro `cmd` y ejecutamos lo siguiente `cobc --version`.
-- Nos deberia aparecer un mensaje con la version de GnuCobol 3.2.
+  - Una vez hecho esto abrimos nuestro `cmd` y ejecutamos lo siguiente `cobc --version`.
+  - Nos deberia aparecer un mensaje con la version de GnuCobol 3.2.
 
+## 2.5 Configurar el entorno de ejecucion.
+  - Si nos vota este error `/mingw/share/gnucobol/config\default.conf: No such file or directory` al ejecutar nuestro proyecto, lo que tenemos que hacer es decirle a GnuCOBOL exactamente dónde están sus carpetas de configuracion.
+  - Configurar las variables de entorno del sistema.
+  - Creamos estos nuevos parametros y le damos en guardar:
+      - `COB_CONFIG_DIR	C:\gnucobol\config`.
+      - `COB_COPY_DIR	C:\gnucobol\copy`.
+      - `COB_LIBRARY_PATH	C:\gnucobol\lib`.
+  - Finalizamos probando reiniciando nuestra terminal y ejecutando nuevamente nuestro proyecto.
 # 3. Mi primer codigo.
-## 3.1 Escribiremos un 
+## 3.1 Escribiremos un hola mundo
+  - Definimos la estructura de nuestro proyecto, respetando las 4 diviciones:
+    - `IDENTIFICATION DIVISION.`
+    - `ENVIRONMENT DIVISION.`
+    - `DATA DIVISION.`
+    - `PROCEDURE DIVISION.`
+  - En `IDENTIFICATION DIVISION.` para identificar el programa dentro del sistema. Podemos colocarle `PROGRAM-ID.` y `AUTHOR.`.
+  - En `ENVIRONMENT DIVISION.` Aqui podemos decirle al programa con que archivos se va a comunicar.
+  - En `DATA DIVISION.` Aqui podemos declarar todas las varibles que usaremos en muestro programa.
+  - En `PROCEDURE DIVISION.` Aqui es donde daremos instrucciones que el programa debe ejecutar.
+    - Ejemplo: 
+    `DISPLAY "BIENVENIDO AL SISTEMA, " NOMBRE-USER.`
+    `PERFORM PROCESAR-DATOS.`
+    `STOP RUN.`
