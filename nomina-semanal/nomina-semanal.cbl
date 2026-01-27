@@ -1,0 +1,42 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. nomina-semanal.
+       AUTHOR. JOSE-VILCA.
+
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       01  WS-NAME PIC X(20).
+       01  WS-HOURS-WORKED.
+           05 WS-HOUR      PIC 9(02).
+           05 WS-MINUTE    PIC 9(02).
+           05 WS-SECONDS   PIC 9(02).
+       01  WS-PAY-PER-HOUR PIC ZZZ,ZZ9.99.
+       01  WS-OVERTIME-PAYMENT PIC ZZZ,ZZ9.99.
+
+
+       01  WS-FIXED-TAX    PIC V99 COMP-3 VALUE .1.
+       01  WS-COMMISSION   PIC 99V99 COMP-3 VALUE 1.5.
+
+       
+
+       PROCEDURE DIVISION.
+
+       MAIN-PROCEDURE.
+           PERFORM INGRESAR-DATOS.
+           STOP RUN.
+       
+       INGRESAR-DATOS.
+           DISPLAY "INGRESE NOMBRE DEL TRABAJADOR:".
+           ACCEPT WS-NAME
+           DISPLAY "INGRESE LAS HORAS TRABAJADAS:".
+           DISPLAY "HORAS:".
+           ACCEPT WS-HOUR.
+           DISPLAY "MINUTOS:".
+           ACCEPT WS-MINUTE
+           DISPLAY "SEGUNDOS:".
+           ACCEPT WS-SECONDS.
+
+
+           
+           
