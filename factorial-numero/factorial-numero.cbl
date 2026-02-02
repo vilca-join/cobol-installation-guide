@@ -1,0 +1,51 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. FACTORIAL-NUMERO.
+       AUTHOR. JOSE-VILCA.
+
+       ENVIRONMENT DIVISION.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       
+       
+       01  DISPLAY-TITULO  PIC X(50)
+       VALUE "FACTORIAL DE UN NUMERO".
+       01  DISPLAY-INPUT   PIC X(50)
+       VALUE "INGRESE UN NUMERO ENTERO: ".
+       01  DISPLAY-OUPUT   PIC X(50)
+       VALUE "RESULTADO CALCULADO: ".
+       01  DISPLAY-ERROR   PIC X(50)
+       VALUE "NO TENEMOS SOPORTE PARA CIFRAS GRANDES: ".
+
+       01  WS-NUMBER  PIC 9(2). 
+       01  WS-FACTORIA    PIC 9(15) VALUE 1.
+       01  WS-COUNTER    PIC 9(2). 
+
+
+       PROCEDURE DIVISION.
+
+       MAIN-PROCEDURE.
+           DISPLAY DISPLAY-TITULO.
+           DISPLAY DISPLAY-INPUT.
+           ACCEPT WS-NUMBER.
+           EVALUATE WS-NUMBER
+               WHEN 0
+               WHEN 1
+                   DISPLAY "EL FACTORIAL DE", WS-NUMBER, "ES: ",
+                   WS-FACTORIA
+               WHEN > 20
+                   DISPLAY DISPLAY-ERROR   
+               WHEN OTHER
+                   PERFORM CALCULO-FACTORIAL
+           END-EVALUATE.           
+           STOP RUN.
+       CALCULO-FACTORIAL.
+           
+           MOVE WS-NUMBER TO WS-COUNTER.
+           PERFORM VARYING WS-COUNTER FROM WS-NUMBER BY -1
+           UNTIL WS-COUNTER = 1
+               DISPLAY WS-FACTORIA
+               MULTIPLY WS-COUNTER BY WS-FACTORIA GIVING WS-FACTORIA
+               DISPLAY WS-FACTORIA
+           END-PERFORM.
+           DISPLAY DISPLAY-OUPUT, WS-FACTORIA
